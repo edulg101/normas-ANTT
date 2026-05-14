@@ -13,7 +13,7 @@ LEIS = [
             "&cod_modulo=161&cod_menu=5408"
         ),
     },
-    # Adicione mais leis aqui no mesmo formato
+    # Adicione mais leis aqui
 ]
 
 TEMPLATE = """<!DOCTYPE html>
@@ -45,15 +45,22 @@ headers = {"User-Agent": "Mozilla/5.0"}
 for lei in LEIS:
     print(f"Extraindo: {lei['titulo']}")
     try:
-        r = requests.get(lei["url"], headers=headers, timeout=30, verify=False)
+        r = requests.get(lei["url"], headers=headers, timeout=60, verify=False)
+        r.encoding = "utf-8"
         soup = BeautifulSoup(r.text, "lxml")
         conteudo = soup.find(id="conteudo")
 
         if not conteudo:
-            print("  ⚠ Elemento #conteudo não encontrado")
-            conteudo = "<p><em>Conteúdo não localizado.</em></p>"
-        else:
+            print("  ⚠ Elemento #conteudo não encontrado, usando body")
+            conteudo = soup.find("body")
+
+        if conteudo:
+            # Remove scripts e nav
+            for tag in conteudo.find_all(["script", "nav", "header", "footer"]):
+                tag.decompose()
             conteudo = str(conteudo)
+        else:
+            conteudo = "<p><em>Conteúdo não localizado.</em></p>"
 
         html = TEMPLATE.format(titulo=lei["titulo"], conteudo=conteudo)
 
