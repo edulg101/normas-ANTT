@@ -29,7 +29,7 @@ LEIS = [
         "url": (
             "https://anttlegis.antt.gov.br/action/UrlPublicasAction.php"
             "?acao=abrirAtoPublico&num_ato=00006032&sgl_tipo=RES"
-            "&sgl_orgao=DG/ANTT/MI&vlr_ano=2023&seq_ato=000"
+            "&sgl_orgao=DG/ANTT/MT&vlr_ano=2023&seq_ato=000"
             "&cod_modulo=161&cod_menu=5408"
         ),
     },
@@ -39,7 +39,7 @@ LEIS = [
         "url": (
             "https://anttlegis.antt.gov.br/action/UrlPublicasAction.php"
             "?acao=abrirAtoPublico&num_ato=00006053&sgl_tipo=RES"
-            "&sgl_orgao=DG/ANTT/MI&vlr_ano=2024&seq_ato=000"
+            "&sgl_orgao=DG/ANTT/MT&vlr_ano=2024&seq_ato=000"
             "&cod_modulo=161&cod_menu=5408"
         ),
     },
@@ -49,7 +49,7 @@ LEIS = [
         "url": (
             "https://anttlegis.antt.gov.br/action/UrlPublicasAction.php"
             "?acao=abrirAtoPublico&num_ato=00006063&sgl_tipo=RES"
-            "&sgl_orgao=DG/ANTT/MI&vlr_ano=2025&seq_ato=000"
+            "&sgl_orgao=DG/ANTT/MT&vlr_ano=2025&seq_ato=000"
             "&cod_modulo=161&cod_menu=5408"
         ),
     },
