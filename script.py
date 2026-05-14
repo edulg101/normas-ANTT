@@ -153,7 +153,8 @@ for lei in LEIS:
         print(f"  ✗ Erro: {e}")
 
 # Gera index.html automaticamente
-index_html = TEMPLATE_INDEX.format(links="\n".join(links))
+index_html = TEMPLATE_INDEX.format(links="\n".join(links), atualizado=agora)
+
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(index_html)
 
