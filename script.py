@@ -135,7 +135,7 @@ for lei in LEIS:
         else:
             conteudo = "<p><em>Conteudo nao localizado.</em></p>"
 
-        html = TEMPLATE_LEI.format(titulo=lei["titulo"], conteudo=conteudo)
+        html = TEMPLATE_LEI.format(titulo=lei["titulo"], conteudo=conteudo, atualizado=agora)
 
         pasta = lei["pasta"]
         os.makedirs(pasta, exist_ok=True)
