@@ -106,7 +106,7 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
 {links}
   </ul>
   <hr>
-  <p><small>Atualizado automaticamente via GitHub Actions.</small></p>
+  <p><small>Ultima atualizacao: {atualizado} — via GitHub Actions.</small></p>
 </body>
 </html>"""
 
