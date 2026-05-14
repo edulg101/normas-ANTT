@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+from datetime import datetime, timezone, timedelta
 
 LEIS = [
     {
@@ -111,6 +112,9 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
 
 headers = {"User-Agent": "Mozilla/5.0"}
 links = []
+
+fuso_br = timezone(timedelta(hours=-3))
+agora = datetime.now(fuso_br).strftime("%d/%m/%Y às %H:%M (Brasília)")
 
 for lei in LEIS:
     print(f"Extraindo: {lei['titulo']}")
