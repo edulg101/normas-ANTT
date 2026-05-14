@@ -2,8 +2,8 @@ name: Extrair leis da ANTT
 
 on:
   schedule:
-    - cron: '0 6 * * 1'   # toda segunda às 6h (horário UTC)
-  workflow_dispatch:        # permite rodar manualmente
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -44,6 +44,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
